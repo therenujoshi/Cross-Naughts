@@ -124,6 +124,21 @@ setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 }//eof constructor
 
 /*************************************************************/
+public void itemStateChanged(ItemEvent e){
+ if(c1.getState())
+  { 
+ type=false;
+ }
+
+ else if(c2.getState())
+  { type=true;
+  }
+remove(c1);remove(c2);
+ repaint(0,0,330,450);
+ showButton();
+}//eof itemstate
+/************************************************************/
+
     public static void main(String []args)
     {
         JFrame.setDefaultLookAndFeelDecorated(true);
