@@ -139,6 +139,36 @@ remove(c1);remove(c2);
 }//eof itemstate
 /************************************************************/
 
+public void actionPerformed(ActionEvent e)
+{
+  if(type==true)
+  {
+    if(e.getSource()==reset)
+    {
+	 for(i=0;i<=8;i++)
+	 {
+	   b[i].setIcon(null);
+  	 }  
+     }
+     else
+     { 
+       for(i=0;i<=8;i++)
+       {
+         if(e.getSource()==b[i])
+         {
+            if(b[i].getIcon()==null)
+	    {
+              if(state==true)
+	      {
+	         icon=ic2;         
+                 state=false;
+	      } else{ icon=ic1; state=true; }
+            b[i].setIcon(icon);
+            }
+       } 
+  }//eof for
+}//eof else
+}//eof logicfriend
     public static void main(String []args)
     {
         JFrame.setDefaultLookAndFeelDecorated(true);
