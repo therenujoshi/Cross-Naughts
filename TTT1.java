@@ -48,6 +48,55 @@ class TTT1 extends JFrame implements ItemListener, ActionListener
 	}
 	/**********************************************************/
 	/*********************************************************/
+	public void complogic(int num)
+	{
+	  for(i=0;i<=7;i++)
+	  {
+	    for(j=1;j<=3;j++)
+	    {
+	      if(a[i][j]==num){  a[i][0]=11; a[i][4]=10;    
+	    }
+	  }
+        }
+	for(i=0;i<=7;i++)
+	{                         
+	     set=true;  		   
+	     if(a[i][4]==10){                                 
+       int count=0;
+       for(j=1;j<=3;j++){                                                //for 2 
+           if(b[(a[i][j]-1)].getIcon()!=null){                               //if 2
+             count++;
+               }                                                                   //eof if 2
+            else{ yesnull=a[i][j]; }
+        }                                                                         //eof for 2
+      if(count==2){                                                        //if 2
+         b[yesnull-1].setIcon(ic2); 
+         this.check(yesnull); set=false;break;
+         }                                                                     //eof if 2
+      }                                                                     //eof if 1
+      else
+	  if(a[i][0]==10){
+                for(j=1;j<=3;j++){                                            //for2
+                    if(b[(a[i][j]-1)].getIcon()==null){                                          //if 1
+                      b[(a[i][j]-1)].setIcon(ic2);
+                        this.check(a[i][j]);
+                         set=false;
+						 break;
+                    }                                                    //eof if1
+                }                                                              //eof for 2
+                if(set==false)
+                      break;                                                       
+            }//eof elseif
+
+    if(set==false)
+         break;    
+ }//eof for 1
+
+
+}//eof complogic
+
+
+/*********************************************************/
     public static void main(String []args)
     {
         JFrame.setDefaultLookAndFeelDecorated(true);
