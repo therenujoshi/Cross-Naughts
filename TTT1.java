@@ -97,6 +97,33 @@ class TTT1 extends JFrame implements ItemListener, ActionListener
 
 
 /*********************************************************/
+TTT1()
+{
+super("Tic-Tac-Toe Game (3x3) ");
+setLocation(300,50);
+CheckboxGroup cbg=new CheckboxGroup();
+c1=new Checkbox("vs Computer",cbg,false);
+c2=new Checkbox("vs Friend",cbg,false);
+c1.setBounds(120,80,100,40);
+c2.setBounds(120,150,100,40);
+add(c1); add(c2);
+c1.addItemListener(this);
+c2.addItemListener(this);
+
+
+state=true;type=true;set=true;
+ic1=new ImageIcon("cross.png");
+ic2=new ImageIcon("zero.jpg");
+ic11=new ImageIcon("cross1.png");
+ic22=new ImageIcon("zero1.jpg");
+
+setLayout(null);
+setSize(330,450);
+setVisible(true);
+setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+}//eof constructor
+
+/*************************************************************/
     public static void main(String []args)
     {
         JFrame.setDefaultLookAndFeelDecorated(true);
