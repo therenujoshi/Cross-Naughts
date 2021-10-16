@@ -30,7 +30,24 @@ class TTT1 extends JFrame implements ItemListener, ActionListener
 		reset.setBounds(100,350,100,50);
 		add(reset);
 		reset.addActionListener(this);
-	 }//eof showButton
+	}//eof showButton
+     /*********************************************************/
+	public  void check(int num1)
+	{
+	  for(ii=0;ii<=7;ii++)
+	  {
+	     for(jj=1;jj<=3;jj++)
+	     {
+	        if(a[ii][jj]==num1)
+	        {
+		 a[ii][4]=11;  
+	     	}
+
+	     }
+	   }
+	}
+	/**********************************************************/
+	/*********************************************************/
     public static void main(String []args)
     {
         JFrame.setDefaultLookAndFeelDecorated(true);
