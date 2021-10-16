@@ -169,6 +169,55 @@ public void actionPerformed(ActionEvent e)
   }//eof for
 }//eof else
 }//eof logicfriend
+else if(type==false){                                     //  complogic
+      if(e.getSource()==reset){
+          for(i=0;i<=8;i++){
+            b[i].setIcon(null);
+          }//eof for 
+       for(i=0;i<=7;i++)
+        for(j=0;j<=4;j++)
+		a[i][j]=a1[i][j];   //again initialsing array
+        }
+        else{  //complogic
+            for(i=0;i<=8;i++){
+               if(e.getSource()==b[i]){
+                  if(b[i].getIcon()==null){ 
+                           b[i].setIcon(ic1);  
+                            if(b[4].getIcon()==null){
+						      b[4].setIcon(ic2);
+							  this.check(5);
+							  } else{
+						         this.complogic(i);
+								 }
+                    }
+                 }
+             }//eof for
+        }
+    }//eof complogic
+
+for(i=0;i<=7;i++){
+  
+  Icon icon1=b[(a[i][1]-1)].getIcon();
+  Icon icon2=b[(a[i][2]-1)].getIcon();
+  Icon icon3=b[(a[i][3]-1)].getIcon();
+     if((icon1==icon2)&&(icon2==icon3)&&(icon1!=null)){
+               if(icon1==ic1){ 
+                 b[(a[i][1]-1)].setIcon(ic11);
+                 b[(a[i][2]-1)].setIcon(ic11); 
+                 b[(a[i][3]-1)].setIcon(ic11);
+	JOptionPane.showMessageDialog(TTT1.this,"!!!YOU won!!! click reset");			 break;
+                   }
+             else if(icon1==ic2){ 
+             b[(a[i][1]-1)].setIcon(ic22);
+             b[(a[i][2]-1)].setIcon(ic22);
+             b[(a[i][3]-1)].setIcon(ic22); 
+               JOptionPane.showMessageDialog(TTT1.this,"!!!AWK (COMPUTER) won!!! click reset");
+                break;			 
+               }
+         }
+    }  
+
+
     public static void main(String []args)
     {
         JFrame.setDefaultLookAndFeelDecorated(true);
